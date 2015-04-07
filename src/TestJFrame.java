@@ -4,7 +4,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JTextField;
 
-
 //Example
 public class TestJFrame {
 	private JTextField arg1 = new JTextField();
