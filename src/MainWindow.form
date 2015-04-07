@@ -45,7 +45,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <enabled value="false"/>
+        </properties>
       </component>
       <component id="a2fcb" class="javax.swing.JTextField" binding="Arg2">
         <constraints>
@@ -53,7 +55,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <enabled value="false"/>
+        </properties>
       </component>
       <scrollpane id="342b3">
         <constraints>
@@ -64,7 +68,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="9e6a6" class="javax.swing.JList" binding="ShapeList" custom-create="true">
+          <component id="9e6a6" class="javax.swing.JList" binding="ShapeList">
             <constraints/>
             <properties>
               <model>
@@ -125,7 +129,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <enabled value="false"/>
+        </properties>
       </component>
     </children>
   </grid>
