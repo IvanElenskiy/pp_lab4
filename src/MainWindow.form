@@ -39,7 +39,7 @@
           <text value="Параметр 2"/>
         </properties>
       </component>
-      <component id="563b6" class="javax.swing.JTextField" binding="Arg1">
+      <component id="563b6" class="javax.swing.JTextField" binding="Arg1" custom-create="true">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -49,7 +49,7 @@
           <enabled value="false"/>
         </properties>
       </component>
-      <component id="a2fcb" class="javax.swing.JTextField" binding="Arg2">
+      <component id="a2fcb" class="javax.swing.JTextField" binding="Arg2" custom-create="true">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -126,7 +126,7 @@
           <text value="Параметр 3"/>
         </properties>
       </component>
-      <component id="f132c" class="javax.swing.JTextField" binding="Arg3">
+      <component id="f132c" class="javax.swing.JTextField" binding="Arg3" custom-create="true">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
