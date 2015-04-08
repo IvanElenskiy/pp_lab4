@@ -43,6 +43,7 @@ public class MainWindow implements ListSelectionListener {
                 Arg3Label.setText("Ширина");
                 Arg3.setEnabled(true);
                 setVolumeResult();
+
                 break;
             case 1: //Сфера
                 Arg1Label.setText("Радиус");
@@ -107,6 +108,7 @@ public class MainWindow implements ListSelectionListener {
                 Arg3.setEnabled(false);
 
         }
+           ShapeView.ChangePicture(ShapeList.getSelectedIndex());
     }
 
     private void setPlainResult()
