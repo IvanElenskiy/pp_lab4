@@ -71,6 +71,33 @@ public class MainWindow implements ListSelectionListener {
                 Arg3.setEnabled(false);
                 setVolumeResult();
                 break;
+            case 4: //Треугольник
+                Arg1Label.setText("Сторона 1");
+                Arg1.setEnabled(true);
+                Arg2Label.setText("Сторона 2");
+                Arg2.setEnabled(true);
+                Arg3Label.setText("Сторона 3");
+                Arg3.setEnabled(true);
+                setPlainResult();
+                break;
+            case 5: //Прямоугольник
+                Arg1Label.setText("Длина");
+                Arg1.setEnabled(true);
+                Arg2Label.setText("Ширина");
+                Arg2.setEnabled(true);
+                Arg3Label.setText("");
+                Arg3.setEnabled(false);
+                setPlainResult();
+                break;
+            case 6: //Круг
+                Arg1Label.setText("Радиус");
+                Arg1.setEnabled(true);
+                Arg2Label.setText("");
+                Arg2.setEnabled(false);
+                Arg3Label.setText("");
+                Arg3.setEnabled(false);
+                setPlainResult();
+                break;
             default:
                 Arg1Label.setText("");
                 Arg1.setEnabled(false);

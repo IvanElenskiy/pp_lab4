@@ -76,6 +76,9 @@
                 <item value="Сфера"/>
                 <item value="Цилиндр"/>
                 <item value="Конус"/>
+                <item value="Треугольник"/>
+                <item value="Прямоугольник"/>
+                <item value="Круг"/>
               </model>
             </properties>
           </component>
