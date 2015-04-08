@@ -187,6 +187,7 @@ public class MainWindow implements ListSelectionListener {
     private boolean verificationString(String testString) {
         Pattern p = Pattern.compile("^\\d+\\.?\\d*$");
         Matcher m = p.matcher(testString);
+        
         return m.matches();
     }
 }
