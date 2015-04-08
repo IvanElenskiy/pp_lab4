@@ -102,20 +102,20 @@
           <text value="S="/>
         </properties>
       </component>
-      <component id="98e4f" class="javax.swing.JLabel">
+      <component id="98e4f" class="javax.swing.JLabel" binding="Result1">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value=" "/>
         </properties>
       </component>
-      <component id="9f2fc" class="javax.swing.JLabel">
+      <component id="9f2fc" class="javax.swing.JLabel" binding="Result2">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value=" "/>
         </properties>
       </component>
       <component id="b4333" class="javax.swing.JLabel" binding="Arg3Label">

@@ -22,6 +22,8 @@ public class MainWindow implements ListSelectionListener {
     private JLabel Result2Label;
     private JLabel Arg3Label;
     private JTextField Arg3;
+    private JLabel Result1;
+    private JLabel Result2;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainWindow");
@@ -53,6 +55,8 @@ public class MainWindow implements ListSelectionListener {
             public void keyTyped(KeyEvent e) {
                 if (!valid)
                     e.consume();
+                else
+                    doTask();
             }
         });
 
@@ -74,6 +78,8 @@ public class MainWindow implements ListSelectionListener {
             public void keyTyped(KeyEvent e) {
                 if (!valid)
                     e.consume();
+                else
+                    doTask();
             }
         });
 
@@ -95,6 +101,8 @@ public class MainWindow implements ListSelectionListener {
             public void keyTyped(KeyEvent e) {
                 if (!valid)
                     e.consume();
+                else
+                    doTask();
             }
         });
     }
@@ -111,7 +119,6 @@ public class MainWindow implements ListSelectionListener {
                 Arg3Label.setText("Ширина");
                 Arg3.setEnabled(true);
                 setVolumeResult();
-
                 break;
             case 1: //Сфера
                 Arg1Label.setText("Радиус");
@@ -174,7 +181,6 @@ public class MainWindow implements ListSelectionListener {
                 Arg2.setEnabled(false);
                 Arg3Label.setText("");
                 Arg3.setEnabled(false);
-
         }
            ShapeView.ChangePicture(ShapeList.getSelectedIndex());
     }
@@ -191,5 +197,53 @@ public class MainWindow implements ListSelectionListener {
         Matcher m = p.matcher(testString);
         
         return m.matches();
+    }
+
+    private void doTask()
+    {
+        Result res = new Result(0,0,0);
+        switch(ShapeList.getSelectedIndex())
+        {
+            case 0: //Параллелепипед
+                if (!Arg1.getText().isEmpty()&&!Arg2.getText().isEmpty()&&!Arg3.getText().isEmpty()) {
+                    System.out.println(Arg1.getText()+" "+Arg2.getText()+" "+Arg3.getText());
+                    res = FigCalc.calcParallelepiped(Double.parseDouble(Arg1.getText()), Double.parseDouble(Arg2.getText()), Double.parseDouble(Arg3.getText()));
+                }
+                break;
+            case 1: //Сфера
+                if (!Arg1.getText().isEmpty())
+                    res = FigCalc.calcSphere(Double.parseDouble(Arg1.getText()));
+                break;
+            case 2: //Цилиндр
+                if (!Arg1.getText().isEmpty()&&!Arg2.getText().isEmpty())
+                    res = FigCalc.calcCylinder(Double.parseDouble(Arg1.getText()), Double.parseDouble(Arg2.getText()));
+                break;
+            case 3: //Конус
+                if (!Arg1.getText().isEmpty()&&!Arg2.getText().isEmpty())
+                    res = FigCalc.calcCone(Double.parseDouble(Arg1.getText()), Double.parseDouble(Arg2.getText()));
+                break;
+            case 4: //Треугольник
+                if (!Arg1.getText().isEmpty()&&!Arg2.getText().isEmpty()&&!Arg3.getText().isEmpty())
+                    res = FigCalc.calcTriangle(Double.parseDouble(Arg1.getText()), Double.parseDouble(Arg2.getText()), Double.parseDouble(Arg3.getText()));
+                break;
+            case 5: //Прямоугольник
+                if (!Arg1.getText().isEmpty()&&!Arg2.getText().isEmpty())
+                    res = FigCalc.calcRectangle(Double.parseDouble(Arg1.getText()), Double.parseDouble(Arg2.getText()));
+                break;
+            case 6: //Круг
+                if (!Arg1.getText().isEmpty())
+                    res = FigCalc.calcCircle(Double.parseDouble(Arg1.getText()));
+                break;
+            default:
+                break;
+        }
+        Double a = res.getA();
+        Result2.setText(a.toString());
+        Double b = res.getV();
+        if (b==-1)
+        {
+            b = res.getP();
+        }
+        Result1.setText(b.toString());
     }
 }

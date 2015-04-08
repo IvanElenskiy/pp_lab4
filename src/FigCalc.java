@@ -1,5 +1,3 @@
-package com.miet.pp.lab4;
-
 public class FigCalc {
 	
 	public static final double pi = 3.141592;
@@ -38,7 +36,7 @@ public class FigCalc {
 	
 	public static Result calcParallelepiped(double a, double b, double h)
 	{
-		double _v = a*b*h;
+		double _v = a * b * h;
 		double _a = (a*b+b*h+a*h)*2;
 		return new Result(-1, _v, _a);
 	}

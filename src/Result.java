@@ -1,5 +1,3 @@
-package com.miet.pp.lab4;
-
 public class Result {
 	private double p;
 	private double v;
