@@ -1,6 +1,11 @@
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JTextField;
 
 /**
  * Created by Andrew on 06.04.2015.
@@ -29,6 +34,69 @@ public class MainWindow implements ListSelectionListener {
     private void createUIComponents() {
         ShapeList = new JList();
         ShapeList.addListSelectionListener(this);
+
+        Arg1 = new JTextField();
+        Arg1.addKeyListener(new KeyAdapter() {
+            boolean valid = false;
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (((e.getKeyCode() < 96) || (e.getKeyCode() > 105)) && ((e.getKeyCode() != 46) && (e.getKeyCode() != 110)))
+                    valid = false;
+                else if (!verificationString(Arg1.getText() + e.getKeyChar()))
+                    valid = false;
+                else
+                    valid = true;
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!valid)
+                    e.consume();
+            }
+        });
+
+        Arg2 = new JTextField();
+        Arg2.addKeyListener(new KeyAdapter() {
+            boolean valid = false;
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (((e.getKeyCode() < 96) || (e.getKeyCode() > 105)) && ((e.getKeyCode() != 46) && (e.getKeyCode() != 110)))
+                    valid = false;
+                else if (!verificationString(Arg2.getText() + e.getKeyChar()))
+                    valid = false;
+                else
+                    valid = true;
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!valid)
+                    e.consume();
+            }
+        });
+
+        Arg3 = new JTextField();
+        Arg3.addKeyListener(new KeyAdapter() {
+            boolean valid = false;
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (((e.getKeyCode() < 96) || (e.getKeyCode() > 105)) && ((e.getKeyCode() != 46) && (e.getKeyCode() != 110)))
+                    valid = false;
+                else if (!verificationString(Arg3.getText() + e.getKeyChar()))
+                    valid = false;
+                else
+                    valid = true;
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!valid)
+                    e.consume();
+            }
+        });
     }
 
     @Override
@@ -109,13 +177,16 @@ public class MainWindow implements ListSelectionListener {
         }
     }
 
-    private void setPlainResult()
-    {
-        Result1Label.setText("P=");
-    }
+    private void setPlainResult() { Result1Label.setText("P="); }
 
     private void setVolumeResult()
     {
         Result1Label.setText("V=");
+    }
+
+    private boolean verificationString(String testString) {
+        Pattern p = Pattern.compile("^\\d+\\.?\\d*$");
+        Matcher m = p.matcher(testString);
+        return m.matches();
     }
 }
