@@ -68,7 +68,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="9e6a6" class="javax.swing.JList" binding="ShapeList">
+          <component id="9e6a6" class="javax.swing.JList" binding="ShapeList" custom-create="true">
             <constraints/>
             <properties>
               <model>
